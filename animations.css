@@ -1,0 +1,121 @@
+/* ============================================
+   FarmStay — Animations & Transitions
+   ============================================ */
+
+/* ---- PAGE TRANSITIONS ---- */
+.page {
+  animation: pageFade 0.4s ease;
+}
+@keyframes pageFade {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- HERO BOUNCE ---- */
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ---- CARD REVEAL ---- */
+.farm-card {
+  animation: cardReveal 0.5s ease both;
+}
+@keyframes cardReveal {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.farm-card:nth-child(1) { animation-delay: 0.05s; }
+.farm-card:nth-child(2) { animation-delay: 0.10s; }
+.farm-card:nth-child(3) { animation-delay: 0.15s; }
+.farm-card:nth-child(4) { animation-delay: 0.20s; }
+.farm-card:nth-child(5) { animation-delay: 0.25s; }
+.farm-card:nth-child(6) { animation-delay: 0.30s; }
+
+/* ---- HERO CONTENT REVEAL ---- */
+.hero-eyebrow  { animation: heroIn 0.8s ease 0.1s both; }
+.hero-title    { animation: heroIn 0.9s ease 0.25s both; }
+.hero-sub      { animation: heroIn 0.8s ease 0.4s both; }
+.hero-search   { animation: heroIn 0.8s ease 0.55s both; }
+.hero-stats    { animation: heroIn 0.8s ease 0.7s both; }
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- EXPERIENCE CARDS ---- */
+.exp-card {
+  animation: cardReveal 0.6s ease both;
+}
+.exp-card:nth-child(1) { animation-delay: 0.1s; }
+.exp-card:nth-child(2) { animation-delay: 0.2s; }
+.exp-card:nth-child(3) { animation-delay: 0.3s; }
+.exp-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* ---- NAV SCROLL SHADOW ---- */
+.navbar { transition: box-shadow 0.3s ease, background 0.3s ease; }
+
+/* ---- STAR RATING HOVER ---- */
+.star-rating-input span {
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+/* ---- UPI BUTTON PULSE ---- */
+.upi-btn.active {
+  animation: pillSelect 0.25s ease;
+}
+@keyframes pillSelect {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+/* ---- FORM INPUT FOCUS GLOW ---- */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  animation: inputGlow 0.3s ease;
+}
+@keyframes inputGlow {
+  from { box-shadow: 0 0 0 0 rgba(184,155,122,0.3); }
+  to   { box-shadow: 0 0 0 3px rgba(184,155,122,0.15); }
+}
+
+/* ---- TOAST ---- */
+@keyframes toastOut {
+  from { opacity: 1; transform: translateX(-50%) translateY(0); }
+  to   { opacity: 0; transform: translateX(-50%) translateY(10px); }
+}
+
+/* ---- BOOKING SUCCESS CONFETTI PULSE ---- */
+.success-icon {
+  animation: iconBounce 0.6s ease 0.2s both;
+}
+@keyframes iconBounce {
+  0%   { transform: scale(0) rotate(-20deg); opacity: 0; }
+  60%  { transform: scale(1.2) rotate(5deg); }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+/* ---- GRASS ANIMATION (hero bg detail) ---- */
+.grass-animation {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 80px;
+  background: linear-gradient(to top, rgba(107,140,110,0.25), transparent);
+  animation: grassSway 6s ease-in-out infinite alternate;
+}
+@keyframes grassSway {
+  from { opacity: 0.5; }
+  to   { opacity: 1; }
+}
+
+/* ---- SHIMMER LOADING ---- */
+@keyframes shimmer {
+  0%   { background-position: -800px 0; }
+  100% { background-position: 800px 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, var(--earth-cream) 25%, var(--border) 50%, var(--earth-cream) 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-sm);
+}
